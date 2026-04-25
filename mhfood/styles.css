@@ -143,6 +143,85 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .card-title { font-size: 1.25rem; margin-bottom: 15px; color: #fff; }
 .card-price { font-size: 1.2rem; font-weight: 800; color: var(--gold); font-family: var(--font-display); }
 
+/* --- Basic Header Styling --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #111; /* Dark background to match your site */
+  color: white;
+  position: relative; /* Important for the dropdown menu */
+}
+
+.brand-logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* --- The Hamburger Icon --- */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white; /* Color of the 3 lines */
+  transition: 0.3s;
+}
+
+/* --- The Navigation Links (Hidden on mobile by default) --- */
+.nav-links {
+  display: none; /* Hides the menu completely */
+  flex-direction: column;
+  position: absolute;
+  top: 60px; /* Pushes it right below the header */
+  right: 0;
+  width: 100%;
+  background-color: #222; /* Slightly lighter dark background for the menu */
+  text-align: center;
+  padding: 20px 0;
+  z-index: 100; /* Keeps it on top of your burger image */
+}
+
+/* Style the actual links */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  font-size: 1.1rem;
+  display: block;
+}
+
+.nav-links a:hover {
+  color: #f39c12; /* Changes to orange when touched/hovered */
+}
+
+/* --- This class is added by Javascript to SHOW the menu --- */
+.nav-links.active {
+  display: flex; 
+}
+
+/* --- DESKTOP VIEW --- */
+/* If someone views on a laptop, show links normally and hide the hamburger */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    width: auto;
+  }
+}
+
 /* Deal Cards */
 .deal-card { background: linear-gradient(145deg, #1a1a1a, #111); border: 1px solid var(--gold); border-radius: 15px; overflow: hidden; text-align: center; display: flex; flex-direction: column; }
 .deal-card .card-content { padding: 25px; }
