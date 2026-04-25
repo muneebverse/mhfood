@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | MH Food's</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<section class="hero" style="height: 50vh; min-height: 400px;">
+  <div class="hero-bg-img" style="background-image:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1920&q=80');"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content anim-slide-right">
+    <h1>Our Story</h1>
+    <div class="gold-divider"></div>
+  </div>
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path class="shape-fill" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path></svg>
+  </div>
+</section>
+
+<main class="section-padding" style="background: var(--bg-section);">
+  <div class="container">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;" class="anim-fade-up">
+      <div>
+        <h2 style="font-size:2.5rem; margin-bottom:20px; color:var(--gold);">Sahiwal's Favorite</h2>
+        <p style="color:var(--text-muted); font-size:1.1rem; margin-bottom:20px;">
+          MH Food's started with a simple vision: serving premium, restaurant-quality fast food to the heart of Sahiwal. We don't compromise on ingredients. Every pizza is stone-baked, and every zinger is fried fresh to order.
+        </p>
+        <p style="color:var(--text-muted); font-size:1.1rem; margin-bottom:40px;">
+          Rated 4.7 stars by locals, we pride ourselves on being open late till 1:30 AM to satisfy those midnight cravings.
+        </p>
+        <div style="display:flex; gap: 20px;">
+          <div style="background:var(--bg-card); padding:20px; border-radius:15px; border:1px solid var(--border); text-align:center; flex:1;">
+            <h3 style="color:var(--gold); font-size:2rem;">4.7⭐</h3>
+            <span style="font-size:0.8rem; color:#aaa;">Google Rating</span>
+          </div>
+          <div style="background:var(--bg-card); padding:20px; border-radius:15px; border:1px solid var(--border); text-align:center; flex:1;">
+            <h3 style="color:var(--gold); font-size:2rem;">1:30 AM</h3>
+            <span style="font-size:0.8rem; color:#aaa;">Late Delivery</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="background:var(--bg-card); border-radius:30px; padding:40px; text-align:center; box-shadow: 0 20px 50px rgba(0,0,0,0.5); border: 1px solid var(--border);">
+          <span style="font-size:4rem; display:block; margin-bottom:10px;">📍</span>
+          <h3 style="margin-bottom:10px; font-size:1.8rem;">Visit Us</h3>
+          <p style="color:var(--text-muted); margin-bottom:30px;">Chowk Pakpattan, Pakpattan Road<br/><strong>Sahiwal, Punjab, Pakistan</strong></p>
+          <a href="https://maps.google.com/?q=MH+Foods+Sahiwal" target="_blank" class="btn btn-primary" style="width:100%;">Open Map</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
