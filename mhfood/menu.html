@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu | MH Food's</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+<!-- GLOBAL HEADER -->
+<header class="global-header">
+  <div class="container-nav">
+    <a href="index.html" class="logo">
+      <img src="your-logo.png" alt="Logo" class="brand-logo">
+      MH <span>Food's</span>
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="deals.html">Deals</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+    <div class="cart-trigger" onclick="toggleCartDrawer()">
+      🛒 Cart <span class="cart-badge" id="global-cart-badge">0</span>
+    </div>
+  </div>
+</header>
+
+<main class="section-padding" style="margin-top: 80px;">
+  <div class="container text-center">
+    <span class="section-label">Fresh From The Kitchen</span>
+    <h1>Our <span style="color:var(--gold);">Menu</span></h1>
+    <div class="gold-divider"></div>
+  </div>
+
+  <div class="container" style="margin-top: 40px;">
+    <!-- Items are injected here automatically by menu-data.js -->
+    <div class="menu-grid" id="full-menu-grid"></div>
+  </div>
+</main>
+
+<!-- GLOBAL FOOTER (Matches Index) -->
+<footer class="site-footer">
+    <!-- TOP PART: Columns -->
+    <div class="footer-main">
+        <!-- Column 1: Brand -->
+        <div class="footer-col">
+            <h2 style="color: #ff8c00;">MH Food's</h2>
+            <p>Serving the heart of Sahiwal. Your go-to spot for burgers, pizzas, loaded fries, and midnight cravings.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">&rarr; Home</a></li>
+                <li><a href="#">&rarr; Full Menu</a></li>
+                <li><a href="#">&rarr; Exclusive Deals</a></li>
+                <li><a href="#">&rarr; About Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Contact -->
+        <div class="footer-col">
+            <h3>Location & Contact</h3>
+            <p><i class="fa-solid fa-phone" style="color: red;"></i> +92 305 8894159</p>
+            <p><i class="fa-solid fa-location-dot" style="color: red;"></i> Chowk Pakpattan, Pakpattan Rd, Sahiwal</p>
+            <p><i class="fa-regular fa-clock"></i> Open Late till 1:30 AM</p>
+        </div>
+    </div>
+
+    <!-- BOTTOM PART: Copyright & Payments -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 MH Food's. All rights reserved.</p>
+        <div class="payment-methods">
+            <span class="pay-badge">Bank Transfer</span>
+            <span class="pay-badge">Easypaisa</span>
+            <span class="pay-badge">JazzCash</span>
+            <span class="pay-badge">Cash on Delivery</span>
+        </div>
+    </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="menu-data.js"></script>
+</body>
+</html>
