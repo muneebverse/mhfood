@@ -15,6 +15,11 @@
   <div class="container-nav">
     <a href="index.html" class="logo">MH <span>Food's</span></a>
     <nav class="main-nav">
+       <div class="hamburger" id="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="menu.html">Menu</a></li>
@@ -92,5 +97,14 @@
 
 <script src="app.js"></script>
 <script src="menu-data.js"></script>
+  <script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+
+  // When the hamburger is clicked, toggle the "active" class on the menu
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+</script>
 </body>
 </html>
