@@ -11,6 +11,28 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typeof window.initScrollAnimations === 'function') {
     window.initScrollAnimations();
   }
+
+  /* --- ADDED FOR STEP C: HAMBURGER MENU LOGIC --- */
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+
+  if (hamburger && navMenu) {
+    // When the hamburger is clicked, toggle the 'active' class
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Auto-close the menu when a link is clicked
+    document.querySelectorAll('.main-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+  }
+  /* ---------------------------------------------- */
+
 });
 
 // 1. Inject Cart Drawer dynamically
