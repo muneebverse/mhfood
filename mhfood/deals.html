@@ -13,26 +13,37 @@
 <!-- GLOBAL HEADER -->
 <header class="global-header">
   <div class="container-nav">
-    <a href="index.html" class="logo">MH <span>Food's</span></a>
-    <nav class="main-nav">
-       <div class="hamburger" id="hamburger">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </div>
+    <!-- 1. Logo -->
+    <a href="index.html" class="logo">
+      <img src="your-logo.png" alt="Logo" class="brand-logo">
+      MH <span>Food's</span>
+    </a>
+
+    <!-- 2. Navigation (Hidden on mobile) -->
+    <nav class="main-nav" id="nav-menu">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="menu.html">Menu</a></li>
-        <li><a href="deals.html" class="active">Deals</a></li>
+        <li><a href="deals.html">Deals</a></li>
         <li><a href="about.html">About Us</a></li>
+        <li class="mobile-only"><a href="#contact">Contact</a></li> <!-- Added Contact -->
       </ul>
     </nav>
-    <div class="cart-trigger" onclick="toggleCartDrawer()">
-      🛒 Cart <span class="cart-badge" id="global-cart-badge">0</span>
+
+    <!-- 3. Actions: Cart is first, Hamburger is on the RIGHT -->
+    <div class="header-actions">
+      <div class="cart-trigger" onclick="toggleCartDrawer()">
+        🛒 <span class="cart-text">Cart</span> <span class="cart-badge" id="global-cart-badge">0</span>
+      </div>
+      
+      <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
     </div>
   </div>
 </header>
-
 <main class="section-padding" style="margin-top: 80px;">
   <div class="container text-center">
     <span class="section-label">Save Big</span>
@@ -97,14 +108,5 @@
 
 <script src="app.js"></script>
 <script src="menu-data.js"></script>
-  <script>
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('nav-menu');
-
-  // When the hamburger is clicked, toggle the "active" class on the menu
-  hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
-</script>
 </body>
 </html>
