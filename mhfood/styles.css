@@ -363,3 +363,89 @@ header {
     margin-left: 5px;
     background-color: #1a1a1a;
 }
+
+/* ============================================================
+   DESIGNER OVERRIDES: GOLDEN RATIO & HEADER FIXES
+   ============================================================ */
+
+/* 1. Golden Ratio Typography (Base 16px/1rem) */
+h1 { font-size: clamp(2.5rem, 6vw, 4.236rem); } /* 1 * 1.618^3 */
+h2 { font-size: clamp(2rem, 4vw, 2.618rem); }   /* 1 * 1.618^2 */
+h3 { font-size: 1.618rem; }                     /* 1 * 1.618^1 */
+p { font-size: 1rem; line-height: 1.618; }      /* Golden line-height */
+
+/* 2. Header Layout Alignment */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between cart and hamburger */
+}
+.mobile-only {
+  display: none; /* Hide contact link on desktop if you want */
+}
+
+/* 3. Golden Ratio Desktop Layouts */
+@media (min-width: 992px) {
+  /* Feature rows split by golden ratio instead of 50/50 */
+  .feature-row .feature-text { flex: 1.618; }
+  .feature-row .feature-image { flex: 1; }
+  
+  /* Footer layout uses golden ratio proportions */
+  .footer-main { grid-template-columns: 1.618fr 1fr 1fr; display: grid; }
+  .footer-col { min-width: auto; }
+}
+
+/* 4. Mobile Menu & Hamburger Logic */
+@media (max-width: 768px) {
+  .cart-text { display: none; } /* Hide the word 'Cart' on mobile to save space */
+  
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    z-index: 1100;
+  }
+  .hamburger .bar {
+    width: 25px; height: 3px;
+    background-color: var(--gold);
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Full Screen Golden Ratio Mobile Menu */
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden off-screen */
+    width: 61.8%; /* Golden Ratio width for side menu! */
+    height: 100vh;
+    background-color: rgba(12, 12, 12, 0.98);
+    backdrop-filter: blur(15px);
+    border-left: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.4s var(--ease);
+    z-index: 1050;
+  }
+  .main-nav.active {
+    right: 0; /* Slides in */
+  }
+  .main-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+  .main-nav ul li a {
+    font-size: 1.618rem; /* Golden Ratio font size for menu items */
+  }
+  .mobile-only {
+    display: block; /* Show contact link on mobile menu */
+  }
+  
+  /* Hamburger Animation into an X */
+  .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .hamburger.active .bar:nth-child(2) { opacity: 0; }
+  .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
